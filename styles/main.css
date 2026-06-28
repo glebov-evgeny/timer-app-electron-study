@@ -36,10 +36,11 @@ canvas {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  justify-content: center;
+  gap: 4px;
   z-index: 10;
+  height: 200px;
   -webkit-app-region: no-drag;
-  margin-top: 28px;
 }
 
 input[type=text] {
@@ -47,10 +48,10 @@ input[type=text] {
   border: none;
   outline: none;
   font-family: "SF Mono", "Fira Code", "Consolas", monospace;
-  font-size: 52px;
+  font-size: 48px;
   font-weight: 600;
   color: #f0f0f0;
-  width: 190px;
+  width: 150px;
   text-align: center;
   letter-spacing: -2px;
   caret-color: #22c55e;
@@ -60,24 +61,16 @@ input[type=text]:disabled {
   color: #f0f0f0;
 }
 
-.sub {
-  font-family: system-ui, sans-serif;
-  font-size: 11px;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: #444;
-  margin-top: -18px;
-  text-align: center;
-  width: 100%;
-}
-
 button {
+  position: absolute;
+  bottom: 20px;
   background: #2a2a2a;
   border: 1px solid #3a3a3a;
   border-radius: 22px;
   color: #888;
   font-family: system-ui, sans-serif;
   font-size: 12px;
+  font-weight: bold;
   letter-spacing: 2px;
   text-transform: uppercase;
   padding: 8px 28px;
@@ -103,6 +96,8 @@ button.done {
   position: absolute;
   top: 12px;
   right: 14px;
+  width: 24px;
+  height: 24px;
   background: none;
   border: none;
   color: #444;
