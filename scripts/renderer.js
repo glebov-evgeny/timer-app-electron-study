@@ -65,7 +65,7 @@ function onDone() {
   draw(0)
   display.value       = '00:00'
   display.style.color = '#22c55e'
-  btn.textContent     = 'Reset'
+  btn.textContent     = 'сбросить'
   btn.className       = 'done'
   display.disabled    = true
   beep()
@@ -96,13 +96,13 @@ function resetIdle() {
   display.disabled    = false
   display.value       = String(inputMinutes).padStart(2, '0') + ':00'
   display.style.color = '#f0f0f0'
-  btn.textContent     = 'Start'
+  btn.textContent     = 'старт'
   btn.className       = ''
   draw(1)
 }
 
 btn.addEventListener('click', () => {
-  if (btn.textContent === 'Reset') { resetIdle(); return }
+  if (btn.textContent === 'сбросить') { resetIdle(); return }
 
   if (!running) {
     if (!inputChanged && remaining > 0 && totalSecs > 0) {
@@ -115,7 +115,7 @@ btn.addEventListener('click', () => {
     }
     running          = true
     display.disabled = true
-    btn.textContent  = 'Stop'
+    btn.textContent  = 'стоп'
     btn.className    = 'running'
     updateDisplay(remaining)
     draw(remaining / totalSecs)
@@ -129,7 +129,7 @@ btn.addEventListener('click', () => {
   } else {
     clearInterval(interval)
     running          = false
-    btn.textContent  = 'Start'
+    btn.textContent  = 'старт'
     btn.className    = ''
     display.disabled = false
   }
