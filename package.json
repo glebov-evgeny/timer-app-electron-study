@@ -1,0 +1,16 @@
+{
+  "name": "timer-app",
+  "version": "1.0.0",
+  "description": "Minimalist radial timer",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron ."
+  },
+  "devDependencies": {
+    "@electron/packager": "^20.0.1",
+    "electron": "^35.0.0"
+  },
+  "dependencies": {
+    "@electron-internal/extract-zip": "^1.0.4"
+  }
+}
