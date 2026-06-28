@@ -22,17 +22,18 @@ $font-ui:     system-ui, sans-serif;
 
 html, body {
   width: 340px;
-  height: 240px;
+  height: 200px;
   overflow: hidden;
   background: transparent;
   -webkit-app-region: drag;
   user-select: none;
+  
 }
 
 // ── Layout ───────────────────────────────────────────────────────
 .wrap {
   width: 340px;
-  height: 240px;
+  height: 200px;
   background: $bg;
   border-radius: $radius-wrap;
   display: flex;
