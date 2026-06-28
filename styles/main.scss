@@ -1,0 +1,145 @@
+// ── Variables ────────────────────────────────────────────────────
+$bg:          #1a1a1a;
+$surface:     #2a2a2a;
+$border:      #3a3a3a;
+$border-lit:  #555;
+$text:        #f0f0f0;
+$text-dim:    #888;
+$text-muted:  #444;
+$green:       #22c55e;
+$green-bg:    #14532d;
+$radius-wrap: 20px;
+$radius-btn:  22px;
+$font-mono:   'SF Mono', 'Fira Code', 'Consolas', monospace;
+$font-ui:     system-ui, sans-serif;
+
+// ── Reset ────────────────────────────────────────────────────────
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  width: 340px;
+  height: 240px;
+  overflow: hidden;
+  background: transparent;
+  -webkit-app-region: drag;
+  user-select: none;
+}
+
+// ── Layout ───────────────────────────────────────────────────────
+.wrap {
+  width: 340px;
+  height: 240px;
+  background: $bg;
+  border-radius: $radius-wrap;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+}
+
+.center {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+  z-index: 10;
+  -webkit-app-region: no-drag;
+  margin-top: 28px;
+}
+
+// ── Timer display ────────────────────────────────────────────────
+input[type='text'] {
+  background: transparent;
+  border: none;
+  outline: none;
+  font-family: $font-mono;
+  font-size: 52px;
+  font-weight: 600;
+  color: $text;
+  width: 190px;
+  text-align: center;
+  letter-spacing: -2px;
+  caret-color: $green;
+  -moz-appearance: textfield;
+
+  &:disabled {
+    color: $text;
+  }
+}
+
+.sub {
+  font-family: $font-ui;
+  font-size: 11px;
+  letter-spacing: 3px;
+  text-transform: uppercase;
+  color: $text-muted;
+  margin-top: -18px;
+  text-align: center;
+  width: 100%;
+}
+
+// ── Button ───────────────────────────────────────────────────────
+button {
+  background: $surface;
+  border: 1px solid $border;
+  border-radius: $radius-btn;
+  color: $text-dim;
+  font-family: $font-ui;
+  font-size: 12px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 8px 28px;
+  cursor: pointer;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
+  -webkit-app-region: no-drag;
+
+  &:hover {
+    background: #333;
+    color: #ccc;
+  }
+
+  &.running {
+    border-color: $border-lit;
+    color: #aaa;
+  }
+
+  &.done {
+    background: $green-bg;
+    border-color: $green;
+    color: $green;
+  }
+}
+
+// ── Close button ─────────────────────────────────────────────────
+.close-btn {
+  position: absolute;
+  top: 12px;
+  right: 14px;
+  background: none;
+  border: none;
+  color: $text-muted;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 2px 6px;
+  border-radius: 6px;
+  line-height: 1;
+  -webkit-app-region: no-drag;
+  letter-spacing: 0;
+
+  &:hover {
+    color: $text-dim;
+    background: $surface;
+  }
+}

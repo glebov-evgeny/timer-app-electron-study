@@ -4,11 +4,16 @@
   "description": "Minimalist radial timer",
   "main": "main.js",
   "scripts": {
-    "start": "electron ."
+    "start": "electron .",
+    "dev": "concurrently \"sass --watch styles/main.scss:styles/main.css\" \"electron .\"",
+    "build:css": "sass styles/main.scss styles/main.css"
   },
   "devDependencies": {
     "@electron/packager": "^20.0.1",
-    "electron": "^35.0.0"
+    "concurrently": "^9.1.2",
+    "electron": "^35.0.0",
+    "electron-reload": "^2.0.0-alpha.1",
+    "sass": "^1.89.2"
   },
   "dependencies": {
     "@electron-internal/extract-zip": "^1.0.4"

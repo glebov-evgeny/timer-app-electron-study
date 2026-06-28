@@ -1,6 +1,14 @@
 const { app, BrowserWindow } = require('electron')
 const path = require('path')
 
+try {
+  require('electron-reload')(__dirname, {
+    electron: require('electron'),
+    forceHardReset: true,
+    hardResetMethod: 'exit',
+  })
+} catch(e) {}
+
 function createWindow() {
   const win = new BrowserWindow({
     width: 340,

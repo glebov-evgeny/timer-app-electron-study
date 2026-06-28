@@ -1,4 +1,4 @@
+onlyBuiltDependencies: []
 allowBuilds:
-  electron: true
-onlyBuiltDependencies:
-  - electron
+  '@parcel/watcher': false
+  electron: false
